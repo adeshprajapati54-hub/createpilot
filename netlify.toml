@@ -1,0 +1,5 @@
+# This repository is a native Android app (Gradle/Kotlin), which Netlify can't build.
+# Netlify serves the static landing page in `public/` instead.
+[build]
+  publish = "public"
+  command = ""

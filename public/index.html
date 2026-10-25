@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CreatorPilot AI — Your YouTube creator copilot</title>
+  <meta name="description" content="YouTube creator AI copilot for ideas, scripts, scenes, thumbnail concepts, and content calendar.">
+  <style>
+    :root { --red:#FF0033; --red-light:#FF4D6D; --indigo:#6366F1; --violet:#8B5CF6; --amber:#F59E0B; --emerald:#10B981; --cyan:#06B6D4;
+            --bg:#0A0E17; --surface:#121826; --border:#334155; --text:#F8FAFC; --muted:#94A3B8; }
+    * { box-sizing:border-box; margin:0; }
+    body { font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; background:var(--bg); color:var(--text); line-height:1.6; }
+    .wrap { max-width:1040px; margin:0 auto; padding:0 24px; }
+    header { padding:24px 0; display:flex; align-items:center; gap:10px; font-weight:700; font-size:1.1rem; }
+    .logo { width:32px; height:32px; border-radius:9px; background:linear-gradient(135deg,var(--red),var(--violet)); display:grid; place-items:center; }
+    .logo::after { content:""; border-left:11px solid #fff; border-top:7px solid transparent; border-bottom:7px solid transparent; margin-left:3px; }
+    .hero { padding:72px 0 56px; text-align:center; }
+    .hero h1 { font-size:clamp(2.2rem,6vw,3.8rem); line-height:1.1; letter-spacing:-.02em; }
+    .hero h1 span { background:linear-gradient(90deg,var(--red),var(--red-light),var(--violet)); -webkit-background-clip:text; background-clip:text; color:transparent; }
+    .hero p { color:var(--muted); font-size:1.15rem; max-width:620px; margin:20px auto 0; }
+    .badge { display:inline-block; margin-top:32px; padding:10px 20px; border:1px solid var(--border); border-radius:999px; color:var(--muted); font-size:.95rem; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px; padding:24px 0 80px; }
+    .card { background:var(--surface); border:1px solid var(--border); border-radius:16px; padding:24px; }
+    .card i { display:block; width:10px; height:10px; border-radius:50%; margin-bottom:14px; }
+    .card h3 { font-size:1.05rem; margin-bottom:6px; }
+    .card p { color:var(--muted); font-size:.95rem; }
+    footer { border-top:1px solid var(--border); padding:24px 0; color:var(--muted); font-size:.9rem; text-align:center; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header><div class="logo" aria-hidden="true"></div>CreatorPilot AI</header>
+    <section class="hero">
+      <h1>Your AI copilot for <span>YouTube creators</span></h1>
+      <p>Go from a spark of an idea to a scheduled upload — brainstorm topics, draft scripts, plan scenes, sketch thumbnail concepts, and keep your content calendar on track.</p>
+      <div class="badge">Coming soon to Android</div>
+    </section>
+    <section class="grid">
+      <div class="card"><i style="background:var(--red)"></i><h3>Idea Lab</h3><p>Generate fresh video ideas tailored to your niche and audience.</p></div>
+      <div class="card"><i style="background:var(--indigo)"></i><h3>Script Studio</h3><p>Turn ideas into structured outlines and full scripts in minutes.</p></div>
+      <div class="card"><i style="background:var(--violet)"></i><h3>Scene Studio</h3><p>Break scripts into shot-by-shot scenes and thumbnail concepts.</p></div>
+      <div class="card"><i style="background:var(--cyan)"></i><h3>Video Analysis</h3><p>Get feedback on what's working and what to improve next.</p></div>
+      <div class="card"><i style="background:var(--emerald)"></i><h3>Content Calendar</h3><p>Plan and track your publishing schedule in one place.</p></div>
+    </section>
+  </div>
+  <footer>&copy; CreatorPilot AI</footer>
+</body>
+</html>
