@@ -1,0 +1,9 @@
+{
+  "name": "creatorpilot",
+  "version": "1.0.0",
+  "private": true,
+  "description": "CreatorPilot AI — Web Studio & Landing Page",
+  "scripts": {
+    "build": "echo 'CreatorPilot static site ready in public/'"
+  }
+}
