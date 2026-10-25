@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Play Badge Container / Pilot Shield -->
+    <path
+        android:pathData="M32,36 C32,28 36,25 44,25 L64,25 C72,25 76,28 76,36 L76,72 C76,80 72,83 64,83 L44,83 C36,83 32,80 32,72 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:startX="32"
+                android:startY="25"
+                android:endX="76"
+                android:endY="83"
+                android:type="linear">
+                <item android:color="#FF1A4B" android:offset="0.0" />
+                <item android:color="#E11D48" android:offset="0.5" />
+                <item android:color="#9333EA" android:offset="1.0" />
+            </gradient>
+        </aapt:attr>
+    </path>
+    <!-- Sharp Play Arrow / Jet -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M49,42 L66,54 L49,66 Z" />
+    <!-- Pilot Flight Wing Spark 1 -->
+    <path
+        android:fillColor="#FBBF24"
+        android:pathData="M78,32 L81,35 L84,32 L81,29 Z" />
+    <!-- Spark 2 -->
+    <path
+        android:fillColor="#FBBF24"
+        android:pathData="M27,62 L29,65 L31,62 L29,59 Z" />
+</vector>

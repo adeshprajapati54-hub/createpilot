@@ -1,0 +1,6 @@
+{
+  "name": "CreatorPilot AI",
+  "description": "YouTube creator AI copilot for ideas, scripts, scenes, thumbnail concepts, and content calendar.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
