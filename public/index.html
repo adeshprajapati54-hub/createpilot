@@ -3,35 +3,45 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CreatorPilot AI — YouTube Creator Copilot</title>
-  <meta name="description" content="AI Copilot for YouTube Creators. Generate viral hooks, full scripts, scene storyboards, and content calendars. Download the native Android app or try the web studio.">
+  <title>CreatorPilot AI — YouTube Creator Workspace & Pre-Production Engine</title>
+  <meta name="description" content="Turn any video idea into a production-ready YouTube plan. Generate multi-angle hooks, complete structured scripts, timestamped scene shotlists, thumbnail concepts, and content calendars.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
   <!-- Navigation Header -->
-  <header class="navbar">
-    <div class="nav-container">
+  <header class="navbar" id="topNavbar">
+    <div class="container nav-container">
       <a href="#" class="brand">
         <div class="brand-icon">⚡</div>
-        <span class="brand-text">CreatorPilot<span class="brand-badge">AI</span></span>
+        <span class="brand-name">CreatorPilot<span class="brand-badge">AI</span></span>
       </a>
+
       <nav class="nav-menu" id="navMenu">
-        <a href="#features">Features</a>
-        <a href="#demo">Web Studio</a>
-        <a href="#pricing">Plans</a>
-        <a href="#download">Download APK</a>
-        <a href="https://ais-pre-ikpnx5ywx7sznck6dig4bp-284078966194.asia-northeast1.run.app" target="_blank" rel="noopener" class="nav-link-emulator">Live Emulator ↗</a>
+        <a href="#workflow" class="nav-link">Workflow</a>
+        <a href="#workspace" class="nav-link">Workspace</a>
+        <a href="#features" class="nav-link">Features</a>
+        <a href="#pricing" class="nav-link">Plans</a>
+        <a href="#faq" class="nav-link">FAQ</a>
+        <a href="#download" class="nav-link">Android App</a>
       </nav>
+
       <div class="nav-actions">
-        <a href="/creatorpilot-latest.apk" download="CreatorPilot.apk" class="btn btn-primary btn-sm">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-          Get APK (23MB)
+        <button class="user-badge-btn" id="userAccountBtn" title="Account & Subscription Settings">
+          <span class="user-avatar-dot"></span>
+          <span id="navUserName">Creator Studio</span>
+          <span class="brand-badge" id="navPlanBadge">Creator</span>
+        </button>
+
+        <a href="#workspace" class="btn btn-primary btn-sm">
+          Open Studio
         </a>
+
         <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation">
-          <span></span><span></span><span></span>
+          ☰
         </button>
       </div>
     </div>
@@ -39,398 +49,750 @@
 
   <!-- Hero Section -->
   <section class="hero-section">
-    <div class="hero-glow hero-glow-1"></div>
-    <div class="hero-glow hero-glow-2"></div>
-    <div class="container hero-container">
-      <div class="badge-pill">
-        <span class="pulse-dot"></span>
-        <span>Version 1.0.0 Now Available • Android & Netlify Web</span>
-      </div>
-      <h1 class="hero-title">
-        Turn raw sparks into <span class="gradient-text">viral YouTube videos</span> in seconds
-      </h1>
-      <p class="hero-subtitle">
-        Your dedicated AI creative copilot. Brainstorm killer hooks, craft multi-scene scripts, direct camera angles, and schedule your editorial calendar with effortless precision.
-      </p>
-
-      <div class="hero-cta-group">
-        <a href="/creatorpilot-latest.apk" download="CreatorPilot.apk" class="btn btn-primary btn-lg" id="downloadHeroBtn">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-          Download Native Android App
-        </a>
-        <a href="#demo" class="btn btn-secondary btn-lg">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-          Try Interactive Studio
-        </a>
-      </div>
-
-      <div class="hero-stats">
-        <div class="stat-item">
-          <div class="stat-number">300%</div>
-          <div class="stat-label">Faster Pre-Production</div>
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-pill">
+          <span>⚡ AI-Powered YouTube Creator Workspace • Web & Native Android</span>
         </div>
-        <div class="stat-divider"></div>
-        <div class="stat-item">
-          <div class="stat-number">10k+</div>
-          <div class="stat-label">Scripts Generated</div>
+
+        <h1 class="hero-title">
+          Turn Any Video Idea into a <span class="text-gradient">Production-Ready YouTube Plan</span>
+        </h1>
+
+        <p class="hero-subtitle">
+          From high-retention hooks and full structured scripts to timestamped camera shotlists, thumbnail concepts, and publishing schedules — engineered in one unified workspace.
+        </p>
+
+        <div class="hero-cta-group">
+          <a href="#workspace" class="btn btn-primary btn-lg" id="launchWorkspaceBtn">
+            <span>⚡ Launch Creator Workspace</span>
+          </a>
+          <a href="/creatorpilot-latest.apk" download="CreatorPilot.apk" class="btn btn-secondary btn-lg" id="heroDownloadApkBtn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download Android App (APK)
+          </a>
         </div>
-        <div class="stat-divider"></div>
-        <div class="stat-item">
-          <div class="stat-number">4.9 ★</div>
-          <div class="stat-label">Creator Rating</div>
+
+        <div class="workflow-badges-bar">
+          <div class="wf-badge-item">
+            <strong>1. Multi-Hook Generation</strong>
+          </div>
+          <span class="wf-badge-arrow">→</span>
+          <div class="wf-badge-item">
+            <strong>2. 5-Part Structured Script</strong>
+          </div>
+          <span class="wf-badge-arrow">→</span>
+          <div class="wf-badge-item">
+            <strong>3. Director's Shotlist</strong>
+          </div>
+          <span class="wf-badge-arrow">→</span>
+          <div class="wf-badge-item">
+            <strong>4. Thumbnail Concepts</strong>
+          </div>
+          <span class="wf-badge-arrow">→</span>
+          <div class="wf-badge-item">
+            <strong>5. Release Calendar</strong>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Interactive Studio Demo -->
-  <section class="demo-section" id="demo">
+  <!-- Workflow Pipeline Explainer -->
+  <section class="workflow-section" id="workflow">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">Interactive Preview</span>
-        <h2 class="section-title">Test Drive the CreatorPilot Engine</h2>
-        <p class="section-desc">Try out the four core creative modes right inside your browser.</p>
+        <span class="section-pill">The 5-Stage Framework</span>
+        <h2 class="section-title">The Complete Video Pre-Production Pipeline</h2>
+        <p class="section-desc">
+          Replace disjointed note apps, spreadsheets, and half-baked outlines with a linear, focused creative engine designed specifically for YouTube creators.
+        </p>
       </div>
 
-      <div class="studio-card">
-        <!-- Studio Tabs -->
-        <div class="studio-tabs">
-          <button class="tab-btn active" data-tab="ideas">
-            <span class="tab-icon">💡</span> Idea Lab
+      <div class="pipeline-grid">
+        <div class="pipeline-step-card">
+          <div class="step-num-badge">01</div>
+          <h3 class="step-title">Idea Lab</h3>
+          <p class="step-desc">Input your raw spark, niche, and audience. Formulate 4 distinct hook archetypes (Curiosity, Bold Claim, Story, Contrarian) with rationale.</p>
+          <span class="step-output-tag">✓ 4 Hook Angles</span>
+        </div>
+
+        <div class="pipeline-step-card">
+          <div class="step-num-badge">02</div>
+          <h3 class="step-title">Script Studio</h3>
+          <p class="step-desc">Generate a complete 5-section narrative: Hook, Setup, Core Value Points, Climax, and CTA with live word-counts and teleprompter mode.</p>
+          <span class="step-output-tag">✓ 5-Act Script</span>
+        </div>
+
+        <div class="pipeline-step-card">
+          <div class="step-num-badge">03</div>
+          <h3 class="step-title">Scene Studio</h3>
+          <p class="step-desc">Break scripts into timestamped production scenes with camera framing, lens notes, lighting directions, and narration audio cues.</p>
+          <span class="step-output-tag">✓ Director Shotlist</span>
+        </div>
+
+        <div class="pipeline-step-card">
+          <div class="step-num-badge">04</div>
+          <h3 class="step-title">Thumbnail Studio</h3>
+          <p class="step-desc">Design high-contrast thumbnail compositions, 3-word bold text overlays, and color psychology notes matched to viewer psychology.</p>
+          <span class="step-output-tag">✓ 3 Visual Concepts</span>
+        </div>
+
+        <div class="pipeline-step-card">
+          <div class="step-num-badge">05</div>
+          <h3 class="step-title">Content Calendar</h3>
+          <p class="step-desc">Track production stages from Draft to Published, set target shoot dates, and export full production checklists to CSV or Markdown.</p>
+          <span class="step-output-tag">✓ Production Schedule</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Creator Workspace Dashboard -->
+  <section class="workspace-section" id="workspace">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-pill">Interactive Workspace</span>
+        <h2 class="section-title">CreatorPilot Production Studio</h2>
+        <p class="section-desc">
+          Plan, draft, direct, and schedule your next YouTube video. Every section is live, editable, autosaved, and exportable.
+        </p>
+      </div>
+
+      <div class="workspace-shell">
+        <!-- Workspace Top Bar -->
+        <div class="workspace-topbar">
+          <div class="ws-project-selector">
+            <label for="projectSelector" class="form-label" style="margin:0;">Active Project:</label>
+            <select id="projectSelector" class="project-select-dropdown">
+              <!-- Dynamically populated -->
+            </select>
+            <button class="btn btn-primary btn-xs" id="btnNewProjectModal">
+              + New Project
+            </button>
+          </div>
+
+          <div class="ws-topbar-center">
+            <div class="usage-meter-pill">
+              <span id="wsPlanLabel">Creator Plan</span>:
+              <strong id="usageCountDisplay">14</strong> / <span id="usageLimitDisplay">50</span> scripts used
+            </div>
+            <div class="autosave-indicator" id="autosaveIndicator">
+              ✓ Autosaved
+            </div>
+          </div>
+
+          <div class="ws-topbar-actions">
+            <button class="btn btn-secondary btn-xs" id="btnChannelSettings" title="Configure Channel Tone, Audience, and Recurring Characters">
+              ⚙️ Channel Settings
+            </button>
+            <button class="btn btn-secondary btn-xs" id="btnDuplicateProject" title="Duplicate Current Project">
+              📄 Duplicate
+            </button>
+            <button class="btn btn-secondary btn-xs" id="btnVersionHistory" title="View Version Snapshots">
+              🕒 History
+            </button>
+            <button class="btn btn-secondary btn-xs" id="btnExportModal" title="Export Project as Markdown, Text, or JSON">
+              📤 Export
+            </button>
+            <button class="btn btn-danger btn-xs" id="btnDeleteProject" title="Delete Current Project">
+              🗑️ Delete
+            </button>
+          </div>
+        </div>
+
+        <!-- Studio Navigation Tabs -->
+        <div class="workspace-tabs" role="tablist">
+          <button class="ws-tab-btn active" data-tab="ideas" role="tab">
+            <span class="ws-tab-icon">💡</span> Idea Lab
           </button>
-          <button class="tab-btn" data-tab="script">
-            <span class="tab-icon">✍️</span> Script Studio
+          <button class="ws-tab-btn" data-tab="script" role="tab">
+            <span class="ws-tab-icon">✍️</span> Script Studio
           </button>
-          <button class="tab-btn" data-tab="scenes">
-            <span class="tab-icon">🎬</span> Scene Studio
+          <button class="ws-tab-btn" data-tab="scenes" role="tab">
+            <span class="ws-tab-icon">🎬</span> Scene Studio
           </button>
-          <button class="tab-btn" data-tab="seo">
-            <span class="tab-icon">📈</span> Title & SEO
+          <button class="ws-tab-btn" data-tab="thumbnails" role="tab">
+            <span class="ws-tab-icon">🖼️</span> Thumbnail Studio
+          </button>
+          <button class="ws-tab-btn" data-tab="seo" role="tab">
+            <span class="ws-tab-icon">📈</span> Title & SEO
+          </button>
+          <button class="ws-tab-btn" data-tab="calendar" role="tab">
+            <span class="ws-tab-icon">📅</span> Content Calendar
           </button>
         </div>
 
-        <!-- Studio Panes -->
-        <div class="studio-content">
-          <!-- Pane 1: Idea Lab -->
-          <div class="tab-pane active" id="pane-ideas">
-            <div class="studio-split">
-              <div class="studio-input-col">
-                <label class="input-label" for="nicheSelect">Channel Niche / Topic</label>
-                <div class="select-wrapper">
-                  <select id="nicheSelect" class="form-control">
-                    <option value="tech">Tech & AI Hardware</option>
-                    <option value="productivity">Productivity & Desk Setups</option>
-                    <option value="finance">Personal Finance & Investing</option>
-                    <option value="gaming">Gaming News & Lore</option>
+        <!-- Workspace Content Panes -->
+        <div class="workspace-content">
+
+          <!-- PANE 1: IDEA LAB -->
+          <div class="ws-tab-pane active" id="pane-ideas" role="tabpanel">
+            <div class="studio-grid-layout">
+              <!-- Left Controls -->
+              <div class="studio-sidebar-panel">
+                <div class="panel-heading">
+                  <strong>Creative Inputs</strong>
+                  <span class="badge-success" id="activeNicheBadge">Tech & AI</span>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="inputIdeaTopic">Video Topic / Core Angle</label>
+                  <input type="text" id="inputIdeaTopic" class="form-input" placeholder="e.g. Replacing physical monitors with AR glasses for 30 days">
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="selectIdeaNiche">Channel Niche</label>
+                  <select id="selectIdeaNiche" class="form-select">
+                    <option value="Tech & AI Hardware">Tech & AI Hardware</option>
+                    <option value="Productivity & Workflow">Productivity & Workflow</option>
+                    <option value="Personal Finance & Investing">Personal Finance & Investing</option>
+                    <option value="Gaming & VR">Gaming & VR</option>
+                    <option value="Filmmaking & Creative Gear">Filmmaking & Creative Gear</option>
                   </select>
                 </div>
 
-                <label class="input-label" for="hookGoal">Desired Video Angle</label>
-                <input type="text" id="hookGoal" class="form-control" value="Why everyone is throwing away their old monitors in 2026">
+                <div class="form-group">
+                  <label class="form-label" for="inputTargetAudience">Target Audience</label>
+                  <input type="text" id="inputTargetAudience" class="form-input" placeholder="e.g. Remote software developers and desk setup enthusiasts">
+                </div>
 
-                <button class="btn btn-primary btn-block" id="genIdeasBtn">
-                  <span>⚡ Generate Viral Angles</span>
+                <div class="form-group">
+                  <label class="form-label" for="selectVideoFormat">Video Format</label>
+                  <select id="selectVideoFormat" class="form-select">
+                    <option value="Long-form (8-12 min)">Long-form (8-12 min)</option>
+                    <option value="Deep Dive (15-25 min)">Deep Dive (15-25 min)</option>
+                    <option value="YouTube Short (60s)">YouTube Short (60s)</option>
+                    <option value="Video Essay">Video Essay</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">Narrative Cadence / Tone</label>
+                  <div class="chips-row" id="ideaToneChips">
+                    <button class="tone-chip active" data-tone="Fast-Paced">⚡ Fast-Paced</button>
+                    <button class="tone-chip" data-tone="Storyteller">📖 Storyteller</button>
+                    <button class="tone-chip" data-tone="Analytical">🔬 Analytical</button>
+                    <button class="tone-chip" data-tone="Casual">☕ Casual</button>
+                  </div>
+                </div>
+
+                <button class="btn btn-primary btn-block" id="btnGenerateHooks">
+                  <span>⚡ Synthesize 4 Hook Archetypes</span>
                 </button>
               </div>
 
-              <div class="studio-output-col">
-                <div class="output-header">
-                  <span class="output-title">Predicted High-CTR Angles</span>
-                  <span class="badge-success">Ready</span>
+              <!-- Right Display: Multi-Hook Archetypes -->
+              <div class="studio-stage-panel">
+                <div class="stage-top-controls">
+                  <div class="stage-title-wrap">
+                    <h3 class="stage-title">Structured Hook Options</h3>
+                    <span class="badge-success">Ready to Test</span>
+                  </div>
+                  <div class="stage-meta-info">
+                    <span>Select a hook to apply as primary script opening</span>
+                  </div>
                 </div>
-                <div class="idea-cards-list" id="ideasList">
-                  <!-- Generated dynamically in app.js -->
+
+                <div class="hooks-list-container" id="hooksListContainer">
+                  <!-- Dynamically populated in app.js -->
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- Pane 2: Script Studio -->
-          <div class="tab-pane" id="pane-script">
-            <div class="studio-split">
-              <div class="studio-input-col">
-                <label class="input-label" for="scriptTopic">Working Title</label>
-                <input type="text" id="scriptTopic" class="form-control" value="I Swapped My Entire Studio for AR Glasses (Day 30)">
-
-                <label class="input-label">Tone & Cadence</label>
-                <div class="tone-chips" id="toneChips">
-                  <button class="chip active" data-tone="Fast-Paced">⚡ Fast-Paced</button>
-                  <button class="chip" data-tone="Storyteller">📖 Storyteller</button>
-                  <button class="chip" data-tone="Analytical">🔬 Analytical</button>
-                  <button class="chip" data-tone="Casual">☕ Casual</button>
+          <!-- PANE 2: SCRIPT STUDIO -->
+          <div class="ws-tab-pane" id="pane-script" role="tabpanel">
+            <div class="studio-grid-layout">
+              <!-- Left Sidebar: Script Controls -->
+              <div class="studio-sidebar-panel">
+                <div class="panel-heading">
+                  <strong>Script Teleprompter & Pacing</strong>
+                  <span class="stage-meta-info mono" id="scriptTotalWords">0 words</span>
                 </div>
 
-                <button class="btn btn-primary btn-block" id="genScriptBtn">
-                  <span>⚡ Draft 3-Part Script</span>
+                <div class="form-group">
+                  <label class="form-label" for="scriptProjectTitle">Working Title</label>
+                  <input type="text" id="scriptProjectTitle" class="form-input">
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">Tone & Pacing Mode</label>
+                  <div class="chips-row" id="scriptStudioToneChips">
+                    <button class="tone-chip active" data-tone="Fast-Paced">⚡ Fast-Paced</button>
+                    <button class="tone-chip" data-tone="Storyteller">📖 Storyteller</button>
+                    <button class="tone-chip" data-tone="Analytical">🔬 Analytical</button>
+                    <button class="tone-chip" data-tone="Casual">☕ Casual</button>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="scriptSpeakerNotes">Custom Host Notes / Context</label>
+                  <textarea id="scriptSpeakerNotes" class="form-textarea" placeholder="Add specific anecdotes, sponsor plugs, or talking points..."></textarea>
+                </div>
+
+                <button class="btn btn-primary btn-block" id="btnRegenerateFullScript">
+                  <span>⚡ Regenerate Full 5-Part Script</span>
                 </button>
+
+                <button class="btn btn-secondary btn-block" id="btnCopyEntireScript">
+                  <span>📋 Copy Full Script</span>
+                </button>
+
+                <div class="panel-heading" style="margin-top:0.5rem;">
+                  <strong>Pacing Teleprompter</strong>
+                </div>
+                <div style="font-size:0.85rem; color:var(--text-muted); line-height: 1.5;">
+                  Estimated spoken duration: <strong id="estReadTime" style="color:var(--accent-blue);">0:00</strong> at 145 wpm speaking cadence.
+                </div>
               </div>
 
-              <div class="studio-output-col">
-                <div class="output-header">
-                  <span class="output-title">Script Blueprint & Teleprompter</span>
-                  <button class="btn btn-secondary btn-xs" id="copyScriptBtn">Copy</button>
+              <!-- Right Teleprompter Sections Stack -->
+              <div class="studio-stage-panel">
+                <div class="stage-top-controls">
+                  <div class="stage-title-wrap">
+                    <h3 class="stage-title">5-Act Narrative Teleprompter</h3>
+                  </div>
+                  <div class="stage-meta-info">
+                    <span>Inline editable • Click any section to revise</span>
+                  </div>
                 </div>
-                <div class="script-reader" id="scriptReader">
-                  <!-- Generated dynamically in app.js -->
+
+                <div class="script-sections-stack" id="scriptSectionsStack">
+                  <!-- Dynamically rendered in app.js -->
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- Pane 3: Scene Studio -->
-          <div class="tab-pane" id="pane-scenes">
-            <div class="scenes-grid" id="scenesGrid">
-              <!-- Dynamically rendered -->
-            </div>
-          </div>
-
-          <!-- Pane 4: Title & SEO -->
-          <div class="tab-pane" id="pane-seo">
-            <div class="seo-inspector">
-              <div class="seo-input-box">
-                <label class="input-label" for="seoInputTitle">Test Your Video Title</label>
-                <div class="search-input-group">
-                  <input type="text" id="seoInputTitle" class="form-control" value="Stop Buying Laptops in 2026! (Do This Instead)">
-                  <button class="btn btn-primary" id="analyzeSeoBtn">Score CTR</button>
+          <!-- PANE 3: SCENE STUDIO -->
+          <div class="ws-tab-pane" id="pane-scenes" role="tabpanel">
+            <div class="studio-stage-panel">
+              <div class="stage-top-controls">
+                <div class="stage-title-wrap">
+                  <h3 class="stage-title">Director's Production Shotlist</h3>
+                  <span class="badge-success" id="scenesCountBadge">4 Scenes</span>
+                </div>
+                <div class="stage-meta-info">
+                  <button class="btn btn-secondary btn-xs" id="btnAddSceneRow">+ Add Custom Scene</button>
+                  <button class="btn btn-primary btn-xs" id="btnRegenAllScenes">⚡ Regenerate Shotlist</button>
                 </div>
               </div>
 
-              <div class="seo-results-grid">
-                <div class="seo-score-card">
-                  <div class="seo-score-ring">
-                    <span class="score-value" id="seoScoreVal">94</span>
-                    <span class="score-max">/100</span>
-                  </div>
-                  <div class="score-meta">
-                    <h4>High Viral Probability</h4>
-                    <p>Strong curiosity gap, negative polarity trigger, clear urgency anchor.</p>
-                  </div>
+              <div class="scenes-timeline" id="scenesTimeline">
+                <!-- Dynamically rendered in app.js -->
+              </div>
+            </div>
+          </div>
+
+          <!-- PANE 4: THUMBNAIL STUDIO -->
+          <div class="ws-tab-pane" id="pane-thumbnails" role="tabpanel">
+            <div class="studio-stage-panel">
+              <div class="stage-top-controls">
+                <div class="stage-title-wrap">
+                  <h3 class="stage-title">High-Contrast Thumbnail Concepts</h3>
+                  <span class="badge-success">Visual Storyboarding</span>
+                </div>
+                <div class="stage-meta-info">
+                  <button class="btn btn-primary btn-xs" id="btnRegenThumbnails">⚡ Generate New Visual Concepts</button>
+                </div>
+              </div>
+
+              <div class="thumbnails-grid" id="thumbnailsGrid">
+                <!-- Dynamically rendered in app.js -->
+              </div>
+            </div>
+          </div>
+
+          <!-- PANE 5: TITLE & SEO STUDIO -->
+          <div class="ws-tab-pane" id="pane-seo" role="tabpanel">
+            <div class="seo-layout-grid">
+              <!-- Title Variations & SEO Analysis -->
+              <div class="seo-card">
+                <div class="panel-heading">
+                  <strong>Title Testing & Variations</strong>
+                  <span class="stage-meta-info">4 Tested Formulas</span>
+                </div>
+                <p style="font-size:0.85rem; color:var(--text-secondary);">
+                  Different viewer mindsets respond to different angles. Choose the title formula best suited for browse vs search.
+                </p>
+
+                <div class="titles-stack" id="titleVariationsStack">
+                  <!-- Populated in app.js -->
                 </div>
 
-                <div class="seo-tags-card">
-                  <h4>Recommended Tags & Keywords</h4>
-                  <div class="tags-cloud" id="tagsCloud">
-                    <span class="tag">#techtrends</span>
-                    <span class="tag">#futuretech</span>
-                    <span class="tag">#creatorsetup</span>
-                    <span class="tag">#productivity</span>
-                    <span class="tag">#smartdevices</span>
+                <div class="form-group" style="margin-top:1rem;">
+                  <label class="form-label" for="customTitleTestInput">Test Custom Title Length & Relevance</label>
+                  <div style="display:flex; gap:0.5rem;">
+                    <input type="text" id="customTitleTestInput" class="form-input" placeholder="Type custom title...">
+                    <button class="btn btn-secondary" id="btnTestTitleLength">Evaluate</button>
                   </div>
+                  <div id="titleFeedbackBox" style="font-size:0.82rem; color:var(--text-muted); margin-top:0.25rem;"></div>
+                </div>
+              </div>
+
+              <!-- Description & Checklist -->
+              <div class="seo-card">
+                <div class="panel-heading">
+                  <strong>YouTube Description & Timestamps</strong>
+                  <button class="btn btn-secondary btn-xs" id="btnCopyDescription">Copy Description</button>
+                </div>
+
+                <div class="form-group">
+                  <textarea id="videoDescriptionBox" class="form-textarea" style="min-height: 140px; font-family: var(--font-mono); font-size: 0.85rem;"></textarea>
+                </div>
+
+                <div class="panel-heading" style="margin-top:0.5rem;">
+                  <strong>Relevant Search Tags</strong>
+                </div>
+                <div class="tags-cloud-box" id="tagsCloudBox">
+                  <!-- Populated in app.js -->
+                </div>
+
+                <div class="panel-heading" style="margin-top:0.75rem;">
+                  <strong>Pre-Publishing Production Checklist</strong>
+                </div>
+                <div class="checklist-stack" id="checklistStack">
+                  <label class="checklist-item">
+                    <input type="checkbox" id="chkAudioLevels"> <span>Audio leveled at -14 LUFS integrated</span>
+                  </label>
+                  <label class="checklist-item">
+                    <input type="checkbox" id="chkColorGrade"> <span>Color balanced on Rec.709 reference monitor</span>
+                  </label>
+                  <label class="checklist-item">
+                    <input type="checkbox" id="chkThumbReadable"> <span>Thumbnail text tested readable at 10% phone scale</span>
+                  </label>
+                  <label class="checklist-item">
+                    <input type="checkbox" id="chkPinnedComment"> <span>Pinned comment with community question drafted</span>
+                  </label>
                 </div>
               </div>
             </div>
           </div>
+
+          <!-- PANE 6: CONTENT CALENDAR -->
+          <div class="ws-tab-pane" id="pane-calendar" role="tabpanel">
+            <div class="calendar-board-container">
+              <div class="stage-top-controls">
+                <div class="stage-title-wrap">
+                  <h3 class="stage-title">Production Status Pipeline</h3>
+                </div>
+                <div class="stage-meta-info">
+                  <button class="btn btn-secondary btn-xs" id="btnExportCalendarCsv">📥 Export Calendar (CSV)</button>
+                  <button class="btn btn-primary btn-xs" id="btnScheduleReleaseModal">📅 Set Target Date</button>
+                </div>
+              </div>
+
+              <div class="calendar-status-columns" id="calendarColumnsContainer">
+                <!-- Dynamically rendered in app.js -->
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Features Grid -->
+  <!-- Feature Highlights Section -->
   <section class="features-section" id="features">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">Engineered for Creators</span>
-        <h2 class="section-title">Everything you need to ship 3x more videos</h2>
-        <p class="section-desc">Stop staring at a blank timeline. CreatorPilot handles the tedious pre-production heavy lifting.</p>
+        <span class="section-pill">Engineered For Consistency</span>
+        <h2 class="section-title">Built for Serious YouTube Creators</h2>
+        <p class="section-desc">
+          Professional creators don't rely on random luck. CreatorPilot provides systematic frameworks to plan, structure, and deliver high-quality content week after week.
+        </p>
       </div>
 
       <div class="features-grid">
-        <div class="feature-card">
-          <div class="feature-icon">🎯</div>
-          <h3>Hook Engineering</h3>
-          <p>Generate first-5-seconds retention hooks optimized to slash swipe-away rates and double initial video velocity.</p>
+        <div class="feature-box">
+          <div class="feat-icon-badge">🎯</div>
+          <h3 class="feature-title">Multi-Angle Hook Architecture</h3>
+          <p class="feature-desc">
+            Test four distinct psychological hooks for every topic: Curiosity Gap, Bold Contrarian Claim, Story Narrative, and Problem-Solution. Never settle for a weak opening.
+          </p>
         </div>
-        <div class="feature-card">
-          <div class="feature-icon">📜</div>
-          <h3>Full-Length Structured Scripts</h3>
-          <p>Get complete intros, storytelling arcs, seamless sponsor transitions, and clear calls-to-action formatted for read-out.</p>
+
+        <div class="feature-box">
+          <div class="feat-icon-badge">📜</div>
+          <h3 class="feature-title">Modular 5-Act Scripts</h3>
+          <p class="feature-desc">
+            Every script is organized into editable modules: Hook, Problem/Setup, Core Value Points, Climax, and CTA. Regenerate single sections without losing your edits.
+          </p>
         </div>
-        <div class="feature-card">
-          <div class="feature-icon">🎥</div>
-          <h3>Scene & B-Roll Shotlists</h3>
-          <p>Receive precise camera angles, pacing guides, visual cues, and overlay prompts alongside each scripted section.</p>
+
+        <div class="feature-box">
+          <div class="feat-icon-badge">🎬</div>
+          <h3 class="feature-title">Director's B-Roll Shotlists</h3>
+          <p class="feature-desc">
+            Never scramble for footage during editing. Get exact camera framing (50mm close-up, 16mm wide, macro detail), visual directions, and audio cues mapped to each scene.
+          </p>
         </div>
-        <div class="feature-card">
-          <div class="feature-icon">📅</div>
-          <h3>Editorial Content Calendar</h3>
-          <p>Track releases, balance short-form teasers with long-form pillar releases, and never miss an upload deadline.</p>
+
+        <div class="feature-box">
+          <div class="feat-icon-badge">🖼️</div>
+          <h3 class="feature-title">Thumbnail Visual Blueprints</h3>
+          <p class="feature-desc">
+            Generate high-contrast thumbnail briefs with punchy 3-word copy, focal point composition, and color theory guidelines matched to your channel niche.
+          </p>
         </div>
-        <div class="feature-card">
-          <div class="feature-icon">⚡</div>
-          <h3>Offline-First Architecture</h3>
-          <p>Full Room database synchronization on Android guarantees you can write and review anywhere, even mid-flight.</p>
+
+        <div class="feature-box">
+          <div class="feat-icon-badge">📅</div>
+          <h3 class="feature-title">Publishing Pipeline</h3>
+          <p class="feature-desc">
+            Manage your pipeline across Draft, Scripting, Recording, Editing, and Scheduled states. Export complete production notes and calendars to CSV.
+          </p>
         </div>
-        <div class="feature-card">
-          <div class="feature-icon">🔒</div>
-          <h3>Cryptographic Verification</h3>
-          <p>HMAC-SHA256 signature verification for subscription receipts guarantees your premium creative tier is always protected.</p>
+
+        <div class="feature-box">
+          <div class="feat-icon-badge">🔒</div>
+          <h3 class="feature-title">Private & Cryptographically Secured</h3>
+          <p class="feature-desc">
+            Your creative ideas remain 100% your own. Client-side storage and HMAC-SHA256 verified subscriptions ensure privacy and tamper-proof entitlements.
+          </p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Pricing Section (Synced with Kotlin SubscriptionScreen & PaymentViewModel) -->
+  <!-- Transparent Pricing Section -->
   <section class="pricing-section" id="pricing">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">Flexible Subscriptions</span>
-        <h2 class="section-title">Pick the plan that accelerates your channel</h2>
-        <p class="section-desc">Upgrade, downgrade, or cancel anytime. Switch to annual billing to save 20%.</p>
+        <span class="section-pill">Transparent Pricing</span>
+        <h2 class="section-title">Plans Designed to Grow With Your Channel</h2>
+        <p class="section-desc">
+          No hidden fees or lock-ins. Switch to annual billing to save 20%. Cancel anytime from your account dashboard with full access preserved through your paid period.
+        </p>
 
-        <!-- Billing Toggle -->
-        <div class="billing-toggle-container">
-          <span class="billing-label" id="monthlyLabel">Monthly</span>
-          <button class="toggle-switch" id="billingToggle" aria-label="Toggle annual billing">
-            <span class="toggle-slider"></span>
+        <div class="billing-switch-wrap">
+          <span class="billing-opt-label active" id="monthlyLabel">Monthly Billing</span>
+          <button class="switch-control" id="billingSwitchBtn" aria-label="Toggle annual billing">
+            <span class="switch-slider"></span>
           </button>
-          <span class="billing-label" id="annualLabel">
-            Annual <span class="discount-pill">Save 20%</span>
+          <span class="billing-opt-label" id="annualLabel">
+            Annual Billing <span class="savings-badge">Save 20%</span>
           </span>
         </div>
       </div>
 
-      <div class="pricing-grid">
+      <div class="pricing-cards-grid">
         <!-- Creator Plan -->
-        <div class="pricing-card" data-plan="creator">
-          <div class="pricing-header">
-            <h3 class="plan-name">Creator</h3>
-            <p class="plan-tagline">Ideal for solo YouTubers building their initial weekly upload cadence.</p>
-            <div class="plan-price">
-              <span class="price-currency">$</span>
-              <span class="price-val" data-monthly="19" data-annual="15">19</span>
-              <span class="price-period">/mo</span>
+        <div class="plan-card" data-plan="creator">
+          <div class="plan-card-header">
+            <h3 class="plan-title">Creator</h3>
+            <p class="plan-tagline">Ideal for solo YouTubers building an initial weekly upload cadence.</p>
+            <div class="price-display">
+              <span class="currency-symbol">$</span>
+              <span class="price-number" data-monthly="19" data-annual="15">19</span>
+              <span class="price-period">/ month</span>
             </div>
-            <div class="annual-note hidden">Billed $180 annually</div>
+            <div class="annual-charge-note hidden">Billed $180 annually</div>
           </div>
-          <ul class="plan-perks">
-            <li>✓ <strong>50 AI Scripts</strong> per month</li>
-            <li>✓ Hook generator & Title scoring</li>
-            <li>✓ Content calendar with 30-day view</li>
-            <li>✓ Export to Markdown & TXT</li>
-            <li>✓ Standard community support</li>
+
+          <ul class="plan-features-list">
+            <li><span class="check-icon">✓</span> <strong>50 AI Video Scripts</strong> per month</li>
+            <li><span class="check-icon">✓</span> Multi-angle Hook Generator</li>
+            <li><span class="check-icon">✓</span> Title variations & SEO tags</li>
+            <li><span class="check-icon">✓</span> Export to Markdown (.md) & TXT</li>
+            <li><span class="check-icon">✓</span> Content calendar with 30-day view</li>
+            <li><span class="check-icon">✓</span> Full Native Android App APK</li>
           </ul>
-          <button class="btn btn-outline btn-block select-plan-btn" data-plan-id="creator" data-plan-name="Creator Plan">
-            Select Creator
+
+          <button class="btn btn-outline btn-block btn-select-tier" data-tier="creator" data-name="Creator Plan">
+            Select Creator Plan
           </button>
         </div>
 
-        <!-- Pro Plan (Popular) -->
-        <div class="pricing-card popular" data-plan="pro">
-          <div class="popular-ribbon">Most Popular</div>
-          <div class="pricing-header">
-            <h3 class="plan-name">Pro</h3>
-            <p class="plan-tagline">For consistent creators scaling multiple weekly releases and Shorts.</p>
-            <div class="plan-price">
-              <span class="price-currency">$</span>
-              <span class="price-val" data-monthly="49" data-annual="39">49</span>
-              <span class="price-period">/mo</span>
+        <!-- Pro Plan (Featured) -->
+        <div class="plan-card featured" data-plan="pro">
+          <div class="featured-ribbon">Most Popular</div>
+          <div class="plan-card-header">
+            <h3 class="plan-title">Pro</h3>
+            <p class="plan-tagline">For consistent creators publishing multiple weekly videos and Shorts.</p>
+            <div class="price-display">
+              <span class="currency-symbol">$</span>
+              <span class="price-number" data-monthly="49" data-annual="39">49</span>
+              <span class="price-period">/ month</span>
             </div>
-            <div class="annual-note hidden">Billed $468 annually</div>
+            <div class="annual-charge-note hidden">Billed $468 annually</div>
           </div>
-          <ul class="plan-perks">
-            <li>✓ <strong>Unlimited AI Scripts</strong> & Hooks</li>
-            <li>✓ Scene Studio & B-Roll shotlists</li>
-            <li>✓ High-CTR thumbnail concept generation</li>
-            <li>✓ Live Teleprompter reader mode</li>
-            <li>✓ Priority Gemini 2.5 Flash processing</li>
-            <li>✓ Direct Room DB cloud sync</li>
+
+          <ul class="plan-features-list">
+            <li><span class="check-icon">✓</span> <strong>Unlimited AI Video Scripts</strong></li>
+            <li><span class="check-icon">✓</span> Director's Scene Studio & Shotlists</li>
+            <li><span class="check-icon">✓</span> High-Contrast Thumbnail Studio</li>
+            <li><span class="check-icon">✓</span> Live Teleprompter reader mode</li>
+            <li><span class="check-icon">✓</span> Priority AI processing speed</li>
+            <li><span class="check-icon">✓</span> Version history & unlimited projects</li>
+            <li><span class="check-icon">✓</span> Android & Web JSON project sync</li>
           </ul>
-          <button class="btn btn-primary btn-block select-plan-btn" data-plan-id="pro" data-plan-name="Pro Plan">
+
+          <button class="btn btn-primary btn-block btn-select-tier" data-tier="pro" data-name="Pro Plan">
             Upgrade to Pro
           </button>
         </div>
 
         <!-- Studio Plan -->
-        <div class="pricing-card" data-plan="studio">
-          <div class="pricing-header">
-            <h3 class="plan-name">Studio</h3>
-            <p class="plan-tagline">Tailored for media houses, teams, and high-output multichannel brands.</p>
-            <div class="plan-price">
-              <span class="price-currency">$</span>
-              <span class="price-val" data-monthly="99" data-annual="79">99</span>
-              <span class="price-period">/mo</span>
+        <div class="plan-card" data-plan="studio">
+          <div class="plan-card-header">
+            <h3 class="plan-title">Studio</h3>
+            <p class="plan-tagline">Tailored for production teams, media houses, and high-output channels.</p>
+            <div class="price-display">
+              <span class="currency-symbol">$</span>
+              <span class="price-number" data-monthly="99" data-annual="79">99</span>
+              <span class="price-period">/ month</span>
             </div>
-            <div class="annual-note hidden">Billed $948 annually</div>
+            <div class="annual-charge-note hidden">Billed $948 annually</div>
           </div>
-          <ul class="plan-perks">
-            <li>✓ <strong>Everything in Pro</strong></li>
-            <li>✓ Multi-channel calendar management</li>
-            <li>✓ Custom brand voice & tone tuning</li>
-            <li>✓ Batch script production exports</li>
-            <li>✓ Dedicated account specialist</li>
-            <li>✓ 99.9% uptime SLA</li>
+
+          <ul class="plan-features-list">
+            <li><span class="check-icon">✓</span> <strong>Everything in Pro</strong></li>
+            <li><span class="check-icon">✓</span> Multi-channel Brand Voice tuning</li>
+            <li><span class="check-icon">✓</span> Recurring Character & host profiles</li>
+            <li><span class="check-icon">✓</span> Batch production export (CSV & JSON)</li>
+            <li><span class="check-icon">✓</span> Multi-seat collaboration ready</li>
+            <li><span class="check-icon">✓</span> Priority email support</li>
           </ul>
-          <button class="btn btn-outline btn-block select-plan-btn" data-plan-id="studio" data-plan-name="Studio Plan">
-            Select Studio
+
+          <button class="btn btn-outline btn-block btn-select-tier" data-tier="studio" data-name="Studio Plan">
+            Select Studio Plan
           </button>
         </div>
       </div>
 
-      <div class="trust-bar">
-        <div class="trust-badge">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          HMAC-SHA256 Verified Security
+      <div class="pricing-terms-note">
+        🔒 All transactions verified via HMAC-SHA256 signatures. 14-day money back guarantee on all plans. Upgrades apply immediately; downgrades or cancellations take effect at the end of the billing period with full access preserved.
+      </div>
+    </div>
+  </section>
+
+  <!-- Honest FAQ Section -->
+  <section class="faq-section" id="faq">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-pill">Got Questions?</span>
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-desc">Clear answers about how CreatorPilot works, ownership, exports, and billing.</p>
+      </div>
+
+      <div class="faq-accordion">
+        <div class="faq-item">
+          <button class="faq-question-btn">
+            <span>Do your titles, hooks, or scripts guarantee viral video views?</span>
+            <span class="faq-arrow">▼</span>
+          </button>
+          <div class="faq-answer-body">
+            No. Any platform claiming to guarantee viral views is misleading you. The YouTube algorithm recommends content based on viewer satisfaction, retention, and audience interest. CreatorPilot helps you structure compelling hooks, maintain narrative momentum, plan strong B-roll, and craft clear titles so your videos have the highest possible creative standard.
+          </div>
         </div>
-        <div class="trust-badge">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          14-Day Money Back Guarantee
+
+        <div class="faq-item">
+          <button class="faq-question-btn">
+            <span>Who owns the generated scripts, hooks, and video plans?</span>
+            <span class="faq-arrow">▼</span>
+          </button>
+          <div class="faq-answer-body">
+            You do. You retain 100% intellectual property ownership of every hook, script, shotlist, and idea you generate in CreatorPilot. You are free to monetize your videos on YouTube, Patreon, or any platform without royalties.
+          </div>
         </div>
-        <div class="trust-badge">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-          Trusted by 5,000+ Creators
+
+        <div class="faq-item">
+          <button class="faq-question-btn">
+            <span>What export formats are supported?</span>
+            <span class="faq-arrow">▼</span>
+          </button>
+          <div class="faq-answer-body">
+            You can export your complete video plans as Markdown (.md) for Notion or Obsidian, plain text (.txt) for quick copying, JSON for cross-platform backup and Android app import, or CSV for content calendars and production spreadsheets.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question-btn">
+            <span>Can I synchronize projects between the Web Studio and the Android app?</span>
+            <span class="faq-arrow">▼</span>
+          </button>
+          <div class="faq-answer-body">
+            Yes. The Web Studio supports full project JSON export and import matching the native Android database schema. You can export a project from the Web Studio and import it into CreatorPilot on Android (or vice-versa) for offline drafting.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question-btn">
+            <span>How does subscription billing and cancellation work?</span>
+            <span class="faq-arrow">▼</span>
+          </button>
+          <div class="faq-answer-body">
+            Subscriptions renew automatically each month or year based on your chosen cadence. You can cancel your subscription at any time with one click from your Account modal. When you cancel, you keep full access to your plan until the end of your prepaid period.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question-btn">
+            <span>Is my channel data kept private?</span>
+            <span class="faq-arrow">▼</span>
+          </button>
+          <div class="faq-answer-body">
+            Yes. Your project drafts, private channel settings, and host notes are never sold, rented, or used to train public machine learning models. Data is encrypted in transit and stored safely in your isolated creator profile.
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Download & Sideload Guide -->
+  <!-- Download APK Section -->
   <section class="download-section" id="download">
     <div class="container">
-      <div class="download-box">
-        <div class="download-info">
-          <span class="section-tag">Direct Android Package</span>
-          <h2>Install CreatorPilot on Your Phone</h2>
-          <p>Download the standalone APK directly to your Android device for native offline performance, fluid Material 3 animations, and instant script editing.</p>
-          
-          <div class="apk-meta-pills">
-            <span class="meta-pill">📱 Android 8.0+ (API 26+)</span>
-            <span class="meta-pill">📦 Version 1.0.0</span>
-            <span class="meta-pill">⚡ 23 MB</span>
+      <div class="download-banner">
+        <div class="download-info-wrap">
+          <span class="section-pill" style="align-self:flex-start;">Native Android Package</span>
+          <h2 style="font-size:2rem;">Install CreatorPilot Directly on Your Android Device</h2>
+          <p style="font-size:1rem; color:var(--text-secondary); line-height:1.6;">
+            Get the standalone Android app with offline-first Room database storage, native Material 3 interface, text-to-speech rehearsal, and seamless export.
+          </p>
+
+          <div class="apk-badges-row">
+            <span class="apk-badge-pill">📱 Android 8.0+ (API 26+)</span>
+            <span class="apk-badge-pill">📦 Version 1.0.0</span>
+            <span class="apk-badge-pill">⚡ 23 MB Standalone</span>
+            <span class="apk-badge-pill">🔒 SHA-256 Verified</span>
           </div>
 
-          <div class="btn-group-row">
-            <a href="/creatorpilot-latest.apk" download="CreatorPilot.apk" class="btn btn-primary btn-lg">
+          <div style="display:flex; gap:1rem; flex-wrap:wrap; margin-top:0.75rem;">
+            <a href="/creatorpilot-latest.apk" download="CreatorPilot.apk" class="btn btn-primary btn-lg" id="btnDownloadApkFooter">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
               Download CreatorPilot.apk
             </a>
             <a href="https://ais-pre-ikpnx5ywx7sznck6dig4bp-284078966194.asia-northeast1.run.app" target="_blank" rel="noopener" class="btn btn-secondary btn-lg">
-              Stream in Browser ↗
+              Live Stream Emulator ↗
             </a>
           </div>
         </div>
 
-        <div class="install-steps">
-          <h3>Quick 3-Step Setup</h3>
-          <ol class="steps-list">
-            <li>
-              <div class="step-num">1</div>
-              <div class="step-body">
-                <strong>Tap Download</strong>
-                <p>Save <code>CreatorPilot.apk</code> to your device's Downloads folder.</p>
+        <div class="install-guide-card">
+          <h4 class="install-guide-title">Quick 3-Step Sideload Guide</h4>
+          <ol class="install-steps-list">
+            <li class="install-step-item">
+              <div class="step-circle">1</div>
+              <div class="step-text-content">
+                <strong>Download APK</strong>
+                <p>Tap download to save CreatorPilot.apk directly to your device.</p>
               </div>
             </li>
-            <li>
-              <div class="step-num">2</div>
-              <div class="step-body">
-                <strong>Enable Installation</strong>
-                <p>If prompted by Chrome or Files, tap <em>Settings</em> and allow "Install unknown apps".</p>
+            <li class="install-step-item">
+              <div class="step-circle">2</div>
+              <div class="step-text-content">
+                <strong>Allow Unknown Sources</strong>
+                <p>When prompted by your browser or Files app, tap Settings and enable "Install unknown apps".</p>
               </div>
             </li>
-            <li>
-              <div class="step-num">3</div>
-              <div class="step-body">
+            <li class="install-step-item">
+              <div class="step-circle">3</div>
+              <div class="step-text-content">
                 <strong>Launch & Create</strong>
-                <p>Open CreatorPilot from your home screen and start generating your next viral video.</p>
+                <p>Open CreatorPilot from your app drawer and start drafting your next video.</p>
               </div>
             </li>
           </ol>
@@ -439,59 +801,354 @@
     </div>
   </section>
 
-  <!-- Checkout / Confirmation Modal -->
-  <div class="modal-backdrop" id="checkoutModal">
-    <div class="modal-dialog">
-      <button class="modal-close" id="modalCloseBtn">&times;</button>
-      <div class="modal-header">
-        <div class="modal-icon">💳</div>
-        <h3 id="modalPlanTitle">Complete Your Subscription</h3>
-        <p id="modalPlanSubtitle">Review and activate your creative privileges</p>
+  <!-- ==========================================================================
+       MODALS AND OVERLAYS
+       ========================================================================== -->
+
+  <!-- Modal 1: New Project Dialog -->
+  <div class="modal-overlay" id="modalNewProject">
+    <div class="modal-window">
+      <div class="modal-header-bar">
+        <h3>Create New Video Project</h3>
+        <button class="modal-close-btn" data-close="modalNewProject">&times;</button>
       </div>
-      <div class="modal-body">
-        <div class="summary-row">
-          <span>Selected Plan:</span>
-          <strong id="modalPlanSelected">Pro Plan</strong>
+      <div class="modal-body-content">
+        <div class="form-group">
+          <label class="form-label" for="newProjTitle">Project / Working Title</label>
+          <input type="text" id="newProjTitle" class="form-input" placeholder="e.g. 10 Things I Learned Coding for 30 Days">
         </div>
-        <div class="summary-row">
-          <span>Billing Cadence:</span>
-          <strong id="modalCadenceSelected">Monthly</strong>
+        <div class="form-group">
+          <label class="form-label" for="newProjTopic">Core Topic / Premise</label>
+          <textarea id="newProjTopic" class="form-textarea" placeholder="Describe what the video is about and what outcome the viewer gets..."></textarea>
         </div>
-        <div class="summary-row total">
-          <span>Due Today:</span>
-          <span class="total-amount" id="modalTotalDue">$49.00</span>
+        <div class="form-group">
+          <label class="form-label" for="newProjNiche">Niche</label>
+          <select id="newProjNiche" class="form-select">
+            <option value="Tech & AI Hardware">Tech & AI Hardware</option>
+            <option value="Productivity & Workflow">Productivity & Workflow</option>
+            <option value="Personal Finance & Investing">Personal Finance & Investing</option>
+            <option value="Gaming & VR">Gaming & VR</option>
+            <option value="Filmmaking & Creative Gear">Filmmaking & Creative Gear</option>
+          </select>
         </div>
-        <div class="crypto-note">
-          <span>🔒 Payment session secured with HMAC-SHA256 verification</span>
+        <div class="form-group">
+          <label class="form-label" for="newProjAudience">Target Audience</label>
+          <input type="text" id="newProjAudience" class="form-input" placeholder="e.g. Intermediate creators and video editors">
         </div>
-        <button class="btn btn-primary btn-block" id="confirmPaymentBtn">
-          Confirm & Activate Subscription
-        </button>
+        <div class="form-group">
+          <label class="form-label" for="newProjFormat">Format & Duration</label>
+          <select id="newProjFormat" class="form-select">
+            <option value="Long-form (8-12 min)">Long-form (8-12 min)</option>
+            <option value="Deep Dive (15-25 min)">Deep Dive (15-25 min)</option>
+            <option value="YouTube Short (60s)">YouTube Short (60s)</option>
+            <option value="Video Essay">Video Essay</option>
+          </select>
+        </div>
+      </div>
+      <div class="modal-footer-bar">
+        <button class="btn btn-secondary" data-close="modalNewProject">Cancel</button>
+        <button class="btn btn-primary" id="btnSubmitNewProject">Create Project</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 2: Channel Settings Dialog -->
+  <div class="modal-overlay" id="modalChannelSettings">
+    <div class="modal-window">
+      <div class="modal-header-bar">
+        <h3>Channel Settings & Brand Voice</h3>
+        <button class="modal-close-btn" data-close="modalChannelSettings">&times;</button>
+      </div>
+      <div class="modal-body-content">
+        <p style="font-size:0.88rem; color:var(--text-secondary);">
+          These settings personalize newly generated hooks, scripts, and scene recommendations to match your channel's unique voice.
+        </p>
+        <div class="form-group">
+          <label class="form-label" for="csNiche">Default Channel Niche</label>
+          <input type="text" id="csNiche" class="form-input" value="Tech & AI Hardware">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="csAudience">Default Target Audience</label>
+          <input type="text" id="csAudience" class="form-input" value="Tech enthusiasts, developers, and hardware lovers">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="csTone">Brand Tone</label>
+          <select id="csTone" class="form-select">
+            <option value="Fast-Paced">Fast-Paced & Energetic</option>
+            <option value="Storyteller">Storyteller & Narrative Arc</option>
+            <option value="Analytical">Analytical & Data-Driven</option>
+            <option value="Casual">Casual & Conversational</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="csBrandVoice">Brand Voice Rules / Words to Avoid</label>
+          <textarea id="csBrandVoice" class="form-textarea" placeholder="e.g. Avoid hype words like 'revolutionary' or 'mind-blowing'; focus on real benchmarks and honest trade-offs."></textarea>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="csHostCharacters">Recurring Host / Characters</label>
+          <input type="text" id="csHostCharacters" class="form-input" value="Alex (Host / Tech Reviewer)">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="csVisualStyle">Visual & B-Roll Style</label>
+          <input type="text" id="csVisualStyle" class="form-input" value="Clean minimal desk, high-contrast macro lighting, moody dark background">
+        </div>
+      </div>
+      <div class="modal-footer-bar">
+        <button class="btn btn-secondary" data-close="modalChannelSettings">Cancel</button>
+        <button class="btn btn-primary" id="btnSaveChannelSettings">Save Settings</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 3: Version History Dialog -->
+  <div class="modal-overlay" id="modalVersionHistory">
+    <div class="modal-window">
+      <div class="modal-header-bar">
+        <h3>Project Version History</h3>
+        <button class="modal-close-btn" data-close="modalVersionHistory">&times;</button>
+      </div>
+      <div class="modal-body-content">
+        <p style="font-size:0.88rem; color:var(--text-secondary);">
+          Snapshots are saved whenever major revisions are made. You can revert to any prior state.
+        </p>
+        <div class="version-list" id="versionHistoryList">
+          <!-- Populated in app.js -->
+        </div>
+      </div>
+      <div class="modal-footer-bar">
+        <button class="btn btn-secondary" data-close="modalVersionHistory">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 4: Export Project Dialog -->
+  <div class="modal-overlay" id="modalExport">
+    <div class="modal-window modal-wide">
+      <div class="modal-header-bar">
+        <h3>Export Video Project</h3>
+        <button class="modal-close-btn" data-close="modalExport">&times;</button>
+      </div>
+      <div class="modal-body-content">
+        <div style="display:flex; gap:0.5rem; border-bottom:1px solid var(--border-subtle); padding-bottom:0.75rem;">
+          <button class="btn btn-primary btn-xs export-tab-btn active" data-format="markdown">Markdown (.md)</button>
+          <button class="btn btn-secondary btn-xs export-tab-btn" data-format="txt">Plain Text (.txt)</button>
+          <button class="btn btn-secondary btn-xs export-tab-btn" data-format="json">Project JSON (.json)</button>
+          <button class="btn btn-secondary btn-xs export-tab-btn" data-format="csv">Checklist (CSV)</button>
+        </div>
+
+        <div class="form-group">
+          <textarea id="exportPreviewText" class="form-textarea" style="min-height: 260px; font-family: var(--font-mono); font-size: 0.85rem;" readonly></textarea>
+        </div>
+      </div>
+      <div class="modal-footer-bar">
+        <button class="btn btn-secondary" id="btnCopyExportText">Copy to Clipboard</button>
+        <button class="btn btn-primary" id="btnDownloadExportFile">Download File</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 5: Delete Confirmation Dialog -->
+  <div class="modal-overlay" id="modalDeleteConfirm">
+    <div class="modal-window" style="max-width:440px;">
+      <div class="modal-header-bar">
+        <h3>Delete Video Project?</h3>
+        <button class="modal-close-btn" data-close="modalDeleteConfirm">&times;</button>
+      </div>
+      <div class="modal-body-content">
+        <p style="font-size:0.95rem; color:var(--text-secondary);">
+          Are you sure you want to delete <strong id="deleteProjTitleTarget" style="color:var(--text-primary);"></strong>? This action cannot be undone.
+        </p>
+      </div>
+      <div class="modal-footer-bar">
+        <button class="btn btn-secondary" data-close="modalDeleteConfirm">Keep Project</button>
+        <button class="btn btn-danger" id="btnConfirmDeleteProject">Yes, Delete Project</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 6: Account, Subscription & Billing Management -->
+  <div class="modal-overlay" id="modalAccountBilling">
+    <div class="modal-window modal-wide">
+      <div class="modal-header-bar">
+        <h3>Creator Account & Subscription</h3>
+        <button class="modal-close-btn" data-close="modalAccountBilling">&times;</button>
+      </div>
+      <div class="modal-body-content">
+        <div style="display:grid; grid-template-columns: 1fr 1fr; gap:1.25rem;">
+          <div style="background:var(--bg-elevated); padding:1.25rem; border-radius:var(--radius-md); border:1px solid var(--border-subtle);">
+            <span class="form-label">Current Plan</span>
+            <div style="display:flex; align-items:center; gap:0.5rem; margin:0.35rem 0 0.75rem 0;">
+              <h2 id="billingCurrentPlanName" style="font-size:1.5rem;">Creator Plan</h2>
+              <span class="badge-success" id="billingSubscriptionStatusBadge">Active</span>
+            </div>
+            <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:1rem;" id="billingRenewalNotice">
+              Auto-renews next cycle. Cancel anytime to stop future renewals.
+            </p>
+            <div style="display:flex; gap:0.5rem; flex-wrap:wrap;">
+              <a href="#pricing" class="btn btn-primary btn-xs" id="billingUpgradeBtn" data-close="modalAccountBilling">Change Plan</a>
+              <button class="btn btn-danger btn-xs" id="btnCancelSubscription">Cancel Subscription</button>
+            </div>
+          </div>
+
+          <div style="background:var(--bg-elevated); padding:1.25rem; border-radius:var(--radius-md); border:1px solid var(--border-subtle);">
+            <span class="form-label">Monthly Usage Quota</span>
+            <div style="font-size:1.75rem; font-weight:800; margin:0.35rem 0;" id="billingUsageNumbers">
+              14 / 50 Scripts
+            </div>
+            <div style="background:var(--bg-input); height:8px; border-radius:var(--radius-full); overflow:hidden; margin-bottom:0.75rem;">
+              <div id="billingUsageProgressBar" style="width:28%; height:100%; background:var(--primary);"></div>
+            </div>
+            <p style="font-size:0.8rem; color:var(--text-muted);">
+              Usage resets at the beginning of each billing cycle. Upgrade to Pro for unlimited script and scene generations.
+            </p>
+          </div>
+        </div>
+
+        <div style="margin-top:1rem;">
+          <div class="panel-heading">
+            <strong>Verified Billing History (HMAC-SHA256 Receipts)</strong>
+          </div>
+          <table class="billing-history-table">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Plan</th>
+                <th>Amount</th>
+                <th>Transaction ID</th>
+                <th>HMAC Signature</th>
+              </tr>
+            </thead>
+            <tbody id="billingHistoryTableBody">
+              <!-- Populated in app.js -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="modal-footer-bar">
+        <button class="btn btn-secondary" data-close="modalAccountBilling">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 7: Checkout & Cryptographic Signature Verification Dialog -->
+  <div class="modal-overlay" id="modalCheckout">
+    <div class="modal-window" style="max-width:500px;">
+      <div class="modal-header-bar">
+        <h3>Complete Subscription Checkout</h3>
+        <button class="modal-close-btn" data-close="modalCheckout">&times;</button>
+      </div>
+      <div class="modal-body-content">
+        <div style="background:var(--bg-elevated); padding:1rem; border-radius:var(--radius-md); border:1px solid var(--border-subtle); display:flex; flex-direction:column; gap:0.5rem;">
+          <div style="display:flex; justify-content:space-between; font-size:0.9rem;">
+            <span style="color:var(--text-secondary);">Plan:</span>
+            <strong id="chkoutPlanTitle">Pro Plan</strong>
+          </div>
+          <div style="display:flex; justify-content:space-between; font-size:0.9rem;">
+            <span style="color:var(--text-secondary);">Cadence:</span>
+            <strong id="chkoutCadenceTitle">Monthly</strong>
+          </div>
+          <div style="display:flex; justify-content:space-between; font-size:1.15rem; border-top:1px solid var(--border-subtle); padding-top:0.5rem; margin-top:0.25rem;">
+            <span>Total Due:</span>
+            <strong style="color:var(--accent-emerald);" id="chkoutTotalAmount">$49.00</strong>
+          </div>
+        </div>
+
+        <div style="font-size:0.8rem; color:var(--text-muted); line-height:1.5;">
+          🔒 <strong>Cryptographic Verification:</strong> Transactions are validated using provider HMAC-SHA256 signatures before subscription entitlements are applied.
+        </div>
+
+        <div id="chkoutVerificationStatus" style="font-size:0.85rem; color:var(--accent-blue); display:none;">
+          ⚡ Verifying HMAC-SHA256 cryptographic signature...
+        </div>
+      </div>
+      <div class="modal-footer-bar">
+        <button class="btn btn-secondary" data-close="modalCheckout">Cancel</button>
+        <button class="btn btn-primary" id="btnConfirmCheckout">Verify & Activate</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 8: Privacy & Data Security Dialog -->
+  <div class="modal-overlay" id="modalPrivacy">
+    <div class="modal-window">
+      <div class="modal-header-bar">
+        <h3>Privacy & Data Ownership Policy</h3>
+        <button class="modal-close-btn" data-close="modalPrivacy">&times;</button>
+      </div>
+      <div class="modal-body-content" style="font-size:0.92rem; color:var(--text-secondary); line-height:1.65;">
+        <h4 style="color:var(--text-primary); margin-bottom:0.25rem;">Creator Content Ownership</h4>
+        <p>You retain exclusive intellectual property rights to all prompts, video scripts, scene shotlists, thumbnail concepts, and calendar plans generated within CreatorPilot. We do not claim any copyright, licensing, or commercial ownership over your content.</p>
+
+        <h4 style="color:var(--text-primary); margin-top:0.75rem; margin-bottom:0.25rem;">No Public Model Training</h4>
+        <p>Your scripts, brand voice parameters, and unpublished project outlines are strictly confidential. We never use your private data to train public foundation models.</p>
+
+        <h4 style="color:var(--text-primary); margin-top:0.75rem; margin-bottom:0.25rem;">Data Storage & Security</h4>
+        <p>Projects are stored client-side in your secure local session storage and transmitted over encrypted TLS channels. Sensitive payment transactions are verified cryptographically via HMAC-SHA256 signatures.</p>
+      </div>
+      <div class="modal-footer-bar">
+        <button class="btn btn-primary" data-close="modalPrivacy">Understood</button>
       </div>
     </div>
   </div>
 
   <!-- Toast Notification -->
-  <div class="toast" id="toastMessage"></div>
+  <div class="toast-notice" id="appToast">
+    <span id="toastText">Action successful</span>
+  </div>
 
   <!-- Footer -->
   <footer class="footer">
-    <div class="container footer-container">
-      <div class="footer-left">
-        <div class="brand">
-          <div class="brand-icon">⚡</div>
-          <span class="brand-text">CreatorPilot AI</span>
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-col">
+          <div class="brand" style="margin-bottom:1rem;">
+            <div class="brand-icon">⚡</div>
+            <span class="brand-name">CreatorPilot<span class="brand-badge">AI</span></span>
+          </div>
+          <p style="font-size:0.9rem; color:var(--text-muted); line-height:1.6;">
+            The unified pre-production workspace for YouTube creators. Plan, script, storyboard, and schedule with creative confidence.
+          </p>
         </div>
-        <p>The definitive AI Copilot built for next-generation content creators.</p>
+
+        <div class="footer-col">
+          <h4>Product</h4>
+          <ul class="footer-links-list">
+            <li><a href="#workflow">5-Stage Workflow</a></li>
+            <li><a href="#workspace">Production Studio</a></li>
+            <li><a href="#features">Feature Deep Dive</a></li>
+            <li><a href="#pricing">Subscription Plans</a></li>
+            <li><a href="/creatorpilot-latest.apk" download>Download Android APK</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Resources</h4>
+          <ul class="footer-links-list">
+            <li><a href="#faq">Frequently Asked Questions</a></li>
+            <li><a href="#workspace" id="footerChannelSettingsLink">Channel Settings</a></li>
+            <li><a href="#pricing">Annual Discount</a></li>
+            <li><a href="https://ais-pre-ikpnx5ywx7sznck6dig4bp-284078966194.asia-northeast1.run.app" target="_blank" rel="noopener">Web Live Emulator</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Trust & Support</h4>
+          <ul class="footer-links-list">
+            <li><a href="#" id="footerPrivacyLink">Privacy & Data Ownership</a></li>
+            <li><a href="mailto:support@creatorpilot.ai">support@creatorpilot.ai</a></li>
+            <li><a href="#pricing">14-Day Refund Guarantee</a></li>
+            <li><a href="#" id="footerBillingLink">Billing & Invoices</a></li>
+          </ul>
+        </div>
       </div>
-      <div class="footer-right">
-        <div class="footer-nav">
-          <a href="#features">Features</a>
-          <a href="#demo">Web Demo</a>
-          <a href="#pricing">Pricing</a>
-          <a href="/creatorpilot-latest.apk" download>Download APK</a>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 CreatorPilot AI. All rights reserved. Built with Jetpack Compose & Netlify.
         </div>
-        <p class="copyright">&copy; 2026 CreatorPilot. Powered by Jetpack Compose & Netlify.</p>
+        <div>
+          <span>Platform status: <strong style="color:var(--accent-emerald);">All Systems Operational</strong></span>
+        </div>
       </div>
     </div>
   </footer>

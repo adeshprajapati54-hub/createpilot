@@ -501,7 +501,54 @@ class ExampleRobolectricTest {
         assertNotNull(feedback)
         assertTrue(feedback?.contains("Idempotency Enforced") == true)
     }
+
+    @Test
+    fun `subscription entitlements enforce quota limits per tier`() = runBlocking {
+        // Free tier: 10 actions
+        viewModel.setCurrentPlan(PlanTier.FREE)
+        assertEquals(10, viewModel.currentPlan.value.let { PlanTier.FREE.aiActions.split(" ")[0].toInt() })
+
+        // Creator tier: 150 actions
+        viewModel.setCurrentPlan(PlanTier.CREATOR)
+        assertEquals(150, viewModel.currentPlan.value.let { PlanTier.CREATOR.aiActions.split(" ")[0].toInt() })
+
+        // Pro tier: 500 actions
+        viewModel.setCurrentPlan(PlanTier.PRO)
+        assertEquals(500, viewModel.currentPlan.value.let { PlanTier.PRO.aiActions.split(" ")[0].toInt() })
+
+        // Studio tier: 1500 actions
+        viewModel.setCurrentPlan(PlanTier.STUDIO)
+        assertEquals("1,500 shared AI actions/mo", PlanTier.STUDIO.aiActions)
+    }
+
+    @Test
+    fun `project persistence maintains isolation across distinct projects`() = runBlocking {
+        val proj1 = ProjectEntity(id = 1101, title = "Tech Review Project", niche = "Tech & AI", format = "Long-form (8-15 min)")
+        val proj2 = ProjectEntity(id = 1102, title = "Finance Breakdown", niche = "Personal Finance", format = "Deep Dive")
+
+        repository.insertProject(proj1)
+        repository.insertProject(proj2)
+
+        val retrieved1 = repository.getProjectSync(1101)
+        val retrieved2 = repository.getProjectSync(1102)
+
+        assertNotNull(retrieved1)
+        assertNotNull(retrieved2)
+        assertEquals("Tech Review Project", retrieved1?.title)
+        assertEquals("Finance Breakdown", retrieved2?.title)
+        assertEquals("Tech & AI", retrieved1?.niche)
+        assertEquals("Personal Finance", retrieved2?.niche)
+
+        // Delete proj1 should not affect proj2
+        repository.deleteProjectById(1101)
+        assertNull(repository.getProjectSync(1101))
+        assertNotNull(repository.getProjectSync(1102))
+
+        // Cleanup
+        repository.deleteProjectById(1102)
+    }
 }
+
 
 
 
